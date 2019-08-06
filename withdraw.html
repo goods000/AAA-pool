@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<link rel="stylesheet" href="css/style_pool.css" />
+		<link rel="stylesheet" href="css/font.css" />
+	</head>
+	<style type="text/css">
+		#J_resetCode{width: 20% !important;margin-top: -57px !important;}
+		#J_resetCode s{color: #993eff;font-size: 14px;}
+		#J_getCode{margin-top: -57px !important;}
+	</style>
+<body>
+<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button><span data-lang="transaction_pu">提 币</span><a href="withdraw_record.html" data-lang="user_change">提币记录</a></h1>
+<div class="bi">
+    <div class="locgin_i shouji_1">
+        <ul class="ulist">
+            <li>
+                <label class="label" for="phone"></label>
+                <div class="controls">
+                    <i data-lang="bonus_title">请选择提币的币种</i>
+                    <select style="width: 100%;">
+                        <option>AISC</option>
+                    </select>
+                </div>
+            </li>
+            <li>
+                <div class="controls" style="position: relative;">
+                    <i data-lang="bonus_list">选择提币地址</i>
+                    <input style="border-radius: 5px 5px 0 0;" data-lang="news_title" name="address" id="ttbia" placeholder="请填写提币地址" type="text"/>
+                    <a style="position: absolute;right: 10px;top:35px;" onclick="BSL.Qcode('0','qrcodeCallback')"><i style="font-size: 20px;" class="iconfont icon-ma"></i><!--<span class="text_scanning">扫描</span>--></a>
+                </div>
+            </li>
+            <li>
+                <div class="controls">
+                    <i data-lang="news_list">请输入提币数量</i>
+                    <input style="border-radius: 5px 5px 0 0;" name="num" placeholder="0.00" type="number"/>
+                    <p><span data-lang="index_title">可提币数量</span>：342342342</p>
+                </div>
+            </li>
+            <li>
+                <div class="controls">
+                    <i data-lang="label_index_gsp">手机号码</i>
+                    <input type="text" value="16578987865" data-lang="" readonly="readonly" placeholder="手机号码" id="phone" class="txt">
+                </div>
+            </li>
+            <li>
+                <div class="controls">
+                    <i data-lang="sell_sales_records">验证码</i>
+                    <input type="number" name="code" data-lang="sell_sales_records" placeholder="验证码" id="code" class="txt">
+                    <a class="btn btn-small get-code" onclick="getCode(this)" id="J_getCode" data-lang="sell_register_subaccount">获取验证码</a>
+                    <a class="btn btn-small reset-code" id="J_resetCode" ><span id="J_second" >60</span><s data-lang="sell_bouns">秒后重发</s></a>
+                </div>
+
+            </li>
+
+            <li>
+                <i ><s data-lang="label_index_balnace">温馨提示：提币扣除手续费</s>0.23%</i>
+            </li>
+        </ul>
+        <input class="tiijiao" type="submit" value="提现" data-lang="transaction_pu"  />
+    </div>
+</div>
+</body>
+<script>
+	function qrcodeCallback(result){
+		  var lang="${lang}";
+		  if(result.indexOf(window.location.host)==-1){ //等于-1表示这个字符串中没有o这个字符
+		   layer.msg('当前扫描的不属于AISC二维码',{icon:5,time:1000});
+		  }else{
+		   window.location.href=result
+		  }
+    }
+	/*获取验证码*/
+	var isPhone = 1;
+	function getCode(e){
+		checkPhone(); //验证手机号码
+		if(isPhone){
+			resetCode(); //倒计时
+		}else{
+			$('#phone').focus();
+		}
+		
+	}
+	//验证手机号码
+    function checkPhone(phone){
+        var pattern = /^1[0-9]{10}$/;
+        if(!pattern.test(phone)){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    //倒计时
+    function resetCode(){
+        $('#J_getCode').hide();
+        $('#J_second').html('60');
+        $('#J_resetCode').show();
+        var second = 60;
+        var timer = null;
+        timer = setInterval(function(){
+            second -= 1;
+            if(second >0 ){
+                $('#J_second').html(second);
+            }else{
+                clearInterval(timer);
+                $('#J_getCode').show();
+                $('#J_resetCode').hide();
+            }
+        },1000);
+    }
+   
+</script>

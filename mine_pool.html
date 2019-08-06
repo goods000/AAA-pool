@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0,minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">  	
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style_pool.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<script src="jquery-1.11.3.min.js"></script>
+		<style>
+		*{margin: 0px;padding: 0px;}
+		.bottom_nav dl dd:nth-child(1) a .dier {display: block !important;}
+		.bottom_nav dl dd:nth-child(1) a .diyi {display: none !important;}
+		.bottom_nav dl dd:nth-child(1) a span {color: #8942E3;}
+		</style>
+<style>
+.mercury{ border-radius: 250px; display: block; position: absolute; ; 
+box-sizing: border-box; -moz-box-sizing: border-box; -webkit-transform-origin: 50% 50%; -moz-transform-origin: 50% 50%; }
+.mercury { width: 54vw; height:54vw;  left: 22%; top: 10%; -webkit-animation: orbit 10s linear infinite;transition:2s;}
+.aisc{ right: 41.5%;}
+.cpu{top: 35%; left:-6.5vw;}
+.gpu{top: 35%; right: -6.5vw;}
+.hd{top: 90%; right:5vw;}
+.ram{top: 90%; left:5vw;}
+.ww{height: 13vw; width: 13vw; position: absolute;margin-top:-6.5vw;z-index: 9;-webkit-animation: orbits 10s linear infinite;}
+.aisc img,.cpu img,.gpu img,.hd img,.ram img{width: 100%;display: block;}
+ @-webkit-keyframes orbit { 
+ 	0% { -webkit-transform:rotate(0deg);}
+ 	5% { -webkit-transform:rotate(72deg);} 
+ 	20% { -webkit-transform:rotate(72deg);}
+ 	25% { -webkit-transform:rotate(144deg);} 
+ 	40% { -webkit-transform:rotate(144deg);}
+ 	45% { -webkit-transform:rotate(216deg);}
+ 	60% { -webkit-transform:rotate(216deg);}
+ 	65% { -webkit-transform:rotate(288deg);}
+ 	80% { -webkit-transform:rotate(288deg);}
+ 	85% { -webkit-transform:rotate(360deg);}
+ 	100% { -webkit-transform:rotate(360deg);}
+ 	}
+ 	 @-webkit-keyframes orbits { 
+ 	0% { -webkit-transform:rotate(0deg);}
+ 	5% { -webkit-transform:rotate(-72deg);} 
+ 	20% { -webkit-transform:rotate(-72deg);}
+ 	25% { -webkit-transform:rotate(-144deg);} 
+ 	40% { -webkit-transform:rotate(-144deg);}
+ 	45% { -webkit-transform:rotate(-216deg);}
+ 	60% { -webkit-transform:rotate(-216deg);}
+ 	65% { -webkit-transform:rotate(-288deg);}
+ 	80% { -webkit-transform:rotate(-288deg);}
+ 	85% { -webkit-transform:rotate(-360deg);}
+ 	100% { -webkit-transform:rotate(-360deg);}
+ 	}
+ 	.wujiyun{position: absolute;top:23%;left: 35%;width: 30%;text-align: center;}
+ 	.wujiyun h1{font-weight: 500;color: #fff;font-size: 1.2rem;}
+ 	.wujiyun p{color: #fff;}
+</style>
+	</head>
+	<body>
+		<h1 class="h1 h11"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button></h1>
+		<div class="kuang_top">
+			<div class="mine_box">
+				<img src="img/mine_roll1.png" class="turntable" alt="turntable">
+				<div class="wujiyun">
+					<h1 data-lang="Stepless_cloud">无级云</h1>
+					<p>0GT</p>
+				</div>
+				<div class="mercury" id="target">
+					<div class="ww aisc"><img src="img/aisc.png"/></div>
+					<div class="ww cpu"><img src="img/cpu.png"/></div>
+					<div class="ww gpu"><img src="img/gpu.png"/></div>
+					<div class="ww hd"><img src="img/hd.png"/></div>
+					<div class="ww ram"><img src="img/ram.png"/></div>
+				</div>
+				<!--<span class="img_title">
+					<p class="p_title">无极云</p>
+					<p><b>0</b> <i>CT</i></p>
+				</span>-->
+			</div>
+			
+			<div class="kuang_title">
+				<div class="k_zi">
+					<p class="k_zi1" data-lang="Effective_equipment">有效设备</p>
+					<p><b>0</b><i data-lang="platform">台</i></p>
+				</div>
+				<div class="kuang_xian"></div>
+				<div class="k_zi">
+					<p class="k_zi1" data-lang="Yesterday_subtotal">昨日小计</p>
+					<p><b>0</b><i>AISC</i></p>
+				</div>
+			</div>
+		</div>	
+		<div class="kuang_tips">
+			<div class="k_zi">
+				<p class="k_zi2" data-lang="Exchange_Price">交易所价格</p>
+				<p class="sh"><b>0.345</b><i>USDT</i></p>
+			</div>
+			<div class="k_zi">
+				<p class="k_zi2" data-lang="24-hour_turnover">24h成交量</p>
+				<p class="sh"><b>544.345</b><i>AISC</i></p>
+			</div>
+			<div class="k_zi">
+				<p class="k_zi2" data-lang="Decline_and_increase">跌涨幅</p>
+				<p class="sh"><b>0.004</b><i>%</i></p>
+			</div>
+		</div>
+		
+		<div class="kuang_ttu">
+			<div class="kuang_tu">
+				<span data-lang="Virtual_Mining">虚拟数字货币开采</span>
+				<div data-lang="Pool_Service">做最好的矿池服务</div>
+				<a href="pool.html"><p data-lang="Enter_the_mine_pool">进入矿池</p></a>
+			</div>
+			<img src="img/pool.png" class="k_img"/>
+		</div>
+		
+		<div id="footer"></div>
+	</body>
+	 <script>
+//	 var current = 0;
+//		$(".ww").on("click",function(){
+//			current = (current+72);
+//			$(".mercury").css("transform","rotate("+current+"deg)");
+//		});
+//		
+//	var current = (current+72);
+//	$(".mercury").css("transform","rotate("+current+"deg)");
+//  
+    </script>
+</html>

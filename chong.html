@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/style_pool.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script type="text/javascript" src="js/jquery-1.11.3.min.js" ></script>
+    <script type="text/javascript" src="js/public.js" ></script>
+</head>
+<style>
+	.screen-right .container{padding: 0px !important;}
+	.h1{position: absolute;width: 100vw;}
+</style>
+<body style="width: 100vw;">
+	<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button>充币<a href="chong_record.html" data-lang="transaction_list">充币记录</a></h1>
+	<div class="charge">
+		<div class="charge_bbj">
+			<div class="chas_lianjie">
+				<h2 data-lang="Currency_Address">充币地址</h2>
+				<input readonly="readonly" value="1723d3pBbYgzLdBPPdCp7CzeSjy5SSevquSevqu" id="biao1">
+				<!--<p id="biao1">1723d3pBbYgzLdBPPdCp7CzeSjy5SSevquSevqu</p>-->
+			</div>
+		<div  class="recharge" style="width: 70%;padding:10% 0;margin: auto;">
+		
+		</div>
+		<p class="qr_btn" onclick="copyUrl2()" data-lang="Copy_Address_Links">复制地址链接</p>			
+		</div>
+	</div>
+<script src="js/jquery.qrcode.min.js"></script>
+
+<script type="text/javascript">
+
+    jQuery('.recharge').qrcode({
+        render: "canvas", //也可以替换为table
+        width: 80,
+        height: 80,
+        text: "{$address}"
+    });
+
+    $('canvas').css({
+        'width': '80%',
+        'display': 'block',
+        'margin': 'auto',
+        'position':'relative',
+        'top':'5vh',
+        'padding': '10px',
+        'background-image': 'url(img/qr_bg.png)',
+        'background-size': '100% 100%',
+        'background-repeat': 'no-repeat',
+    });
+
+</script>
+	<script>
+		function copyUrl2(){
+			var Url2=document.getElementById("biao1");
+			 Url2.select(); // 选择对象
+			document.execCommand("Copy"); // 执行浏览器复制命令
+			 alert("已复制好，可贴粘。");
+		 }
+	</script>
+</body>
+</html>

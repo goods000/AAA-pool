@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>
+		<script type="text/javascript" src="js/public.js"></script>
+		<link rel="stylesheet" href="css/style_pool.css" />
+		<link rel="stylesheet" href="css/font.css" />
+		<style type="text/css">
+			.xia_img1{ transform:rotate(90deg);-ms-transform:rotate(90deg);-webkit-transform:rotate(90deg);}
+			.chioce{color: #A964FF;background: #25135B;border: 1px solid #9C6CD7;}
+		</style>
+	</head>
+	<body>
+		<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button><span data-lang="Details_funds">资金明细</span></h1>
+		<div class="money">
+			<img src="img/search.png" class="m_img"/>
+			<input type="text" id="" value="" readonly="readonly" placeholder="请选择您要查询的分类" data-lang="tipes"/>
+			<span class="iconfont icon-xiangzuo1 xia_img"></sapn>
+		</div>
+		<div id="box">
+			<div class="type_box">
+				<div class="type" data-lang="Full_classification">全部分类</div>
+				<div class="type" data-lang="Team_Benefit">团队收益</div>
+				<div class="type" data-lang="Recommended_Income">推荐收益</div>
+				<div class="type" data-lang="Mining_revenue">挖矿收益</div>
+				<div class="type" data-lang="transaction_title">充币</div>
+				<div class="type" data-lang="transaction_pu">提币</div>
+				<div class="type" data-lang="Purchase_of_equipment">购买设备</div>
+			</div>
+			<div class="btn_box">
+				<p class="close" data-lang="cancel">取消</p>
+				<p class="open" data-lang="Determine">确定</p>
+			</div>
+		</div>
+		
+		<div class="	">
+			<div class="money_l">
+				<div class="ge_l">
+					<span data-lang="Team_Benefit">团队收益</span>
+					<b class="ge_b">+1000</b>
+				</div>
+				<div class="ge_l">
+					<span class="ge_l_zi">2019-09-12 12:12:12</span>
+					<span class="ge_l_zi"><span class="ge_l_zi" data-lang="Pipeline_number">流水号</span>:456465454165435445874</span>
+				</div>
+			</div>
+			<div class="money_l">
+				<div class="ge_l">
+					<span data-lang="Recommended_Income">推荐收益</span>
+					<b class="ge_b">+1000</b>
+				</div>
+				<div class="ge_l">
+					<span class="ge_l_zi">2019-09-12 12:12:12</span>
+					<span class="ge_l_zi"><span class="ge_l_zi" data-lang="Pipeline_number">流水号</span>:456465454165435445874</span>
+				</div>
+			</div>
+			<div class="money_l">
+				<div class="ge_l">
+					<span data-lang="Mining_revenue">挖矿收益</span>
+					<b class="ge_b">+1000</b>
+				</div>
+				<div class="ge_l">
+					<span class="ge_l_zi">2019-09-12 12:12:12</span>
+					<span class="ge_l_zi"><span class="ge_l_zi" data-lang="Pipeline_number">流水号</span>:456465454165435445874</span>
+				</div>
+			</div>
+			<div class="money_l">
+				<div class="ge_l">
+					<span data-lang="transaction_pu">提币</span>
+					<b class="ge_red">-1000</b>
+				</div>
+				<div class="ge_l">
+					<span class="ge_l_zi">2019-09-12 12:12:12</span>
+					<span class="ge_l_zi"><span class="ge_l_zi" data-lang="Pipeline_number">流水号</span>:456465454165435445874</span>
+				</div>
+			</div>
+			<div class="money_l">
+			<div class="ge_l">
+				<span data-lang="Purchase_of_equipment">购买设备</span>
+				<b class="ge_red">-1000</b>
+			</div>
+			<div class="ge_l">
+				<span class="ge_l_zi">2019-09-12 12:12:12</span>
+				<span class="ge_l_zi"><span class="ge_l_zi" data-lang="">流水号</span>:456465454165435445874</span>
+			</div>
+		</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		$(".money").click(function(){
+			$("#box").toggle();
+			$(".xia_img").toggleClass("xia_img1");
+		})
+		
+		$(".type").each(function(i){
+			$(this).click(function(){
+				console.log(i)
+				$(this).toggleClass("chioce");
+			})
+		})
+		$(".close").click(function(){$("#box").css("display","none")})
+	</script>
+</html>

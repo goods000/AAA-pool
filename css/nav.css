@@ -1,0 +1,18 @@
+/*公告样式*/
+*{margin: 0px;padding: 0px;font-size: 14px;font-family: "microsoft yahei";list-style: none;text-decoration: none;}
+input[type=button], input[type=submit], input[type=file], button { cursor: pointer; -webkit-appearance: none; }
+input,button,select{outline:none;-webkit-appearance: none;}
+
+
+/*底部导航栏*/
+.bottom_nav dl dd{width:33.33%;text-align: center;}
+.bottom_nav dl dd button{border: 0px;line-height: 20px;background: none;display: block;text-align: center;font-size:20px;width: 100%;outline:none}
+.bottom_nav dl dd span{font-size: 12px;font-weight: 500;color: #fff;}
+.bottom_nav dl dd button::before{display: block;}
+.bottom_nav dl dd a::before{display: block;}
+.bottom_nav dl dd a,.bottom_nav dl dd button{font-size:25px;line-height: 15px;display: block;}
+.bottom_nav{background: #080515;padding-top:5px;padding-bottom:5px;position: fixed;width: 100vw;bottom: 0px;}
+.bottom_nav dl{display: flex;}
+.bottom_nav dl dd a i{width:20%;display: block;margin: auto;}
+.bottom_nav dl dd a i img{width: 100%;display: block;}
+.bottom_nav dl dd a i:nth-child(2){display: none;}

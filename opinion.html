@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title></title>
+<link rel="stylesheet" href="css/style_pool.css" />
+<link rel="stylesheet" href="css/font.css" />
+</head>
+
+<body style="background: #F5F5F5;">
+	<h1 class="h1">
+		<button class="diu iconfont icon-xiangzuo1"
+			onclick="javascript:window.history.back(-1);"></button>
+		意见反馈
+	</h1>
+
+	<div id="container" class="ge">
+		<div id="about-feedback">非常感谢您的支持和关注，请在这里留下您宝贵的意见和建议！（内容至少10个字）
+		</div>
+		<div id="feedback-content">
+			<form   enctype="multipart/form-data" id="author_form">
+				<div id="title">
+					<select id="quzhi"  >
+						<option value="">选择反馈意见类型</option>
+						<option value="">系统界面建议</option>
+						<option value="">系统制度建议</option>
+						<option value="">系统体验感建议</option>
+					</select>
+				</div>
+				<input name="type"  id="type"  type="hidden">
+<!-- 				<input name="type"  id="type"  > -->
+				<textarea id="content" name="coontent"
+					placeholder="请输入反馈意见最少不能少于10个字最多不能超过200个字"></textarea>
+				<div id="length-note">
+					您还可以输入 <label id="now-length">200</label> 字!
+				</div>
+				<h1>上传图片</h1>
+				<div class="oppiin" style="width:100%;display: flex;">
+					<div class="opin">
+						 	<input type="file" id="photo1" name=""   accept="image/*"/>
+						    <div id="image"  class="image">
+						        <img src="" />
+						    </div>
+	    			</div>
+	    			<div class="opin">
+						<input id="photo2" type="file"   name="file" accept="image/*">
+						<div id="image1"  class="image">
+						        <img src="" />
+						    </div>
+					</div>
+					<div class="opin">
+						<input id="photo3"  type="file"  name="file"  accept="image/*">
+						<div id="image2"  class="image">
+						        <img src="" />
+						    </div>
+					</div>
+					</div>
+				
+				<div class="shangchuan">
+					
+				<!-- 	<div class="oppin">
+						<div id="drop_area"></div>
+						<div id="drop_area2"></div>
+						<div id="drop_area3"></div>
+					</div>
+				</div> -->
+				<div>
+					<a  id="sub" > 确认</a>
+				</div>
+			</form>
+		</div>
+	</div>
+
+</body>
+<script src="static/other/jquery-1.7.1/jquery-1.7.1.min.js"></script>
+<script src="static/other/swiper/js/swiper.min.js"></script>
+<script src="static/other/layui/layui.all.js"></script>
+<script src="static/other/layer/layer.js"></script>
+<script src="static/js/global_jq.js"></script>
+<script src="js/upload.js"></script>
+<script src="js/layui.all.js"></script>
+<script type="text/javascript">
+document.getElementById('photo1').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+};
+document.getElementById('photo2').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image1').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+};
+document.getElementById('photo3').onchange = function() {
+    var imgFile = this.files[0];
+    var fr = new FileReader();
+    fr.onload = function() {
+        document.getElementById('image2').getElementsByTagName('img')[0].src = fr.result;
+    };
+    fr.readAsDataURL(imgFile);
+};
+	var file1="";
+	var file2="";
+	var file3="";
+	/* var dragImgUpload = new DragImgUpload("#photo1", {
+		callback : function(files) {
+			//回调函数，可以传递给后台等等
+			 file1 = files[0];
+			console.log(file1);
+			$("#photo1").val(file1);
+		}
+	})
+	var dragImgUpload = new DragImgUpload("#photo2", {
+		callback : function(files) {
+			//回调函数，可以传递给后台等等
+			 file2 = files[0];
+			console.log(file2);
+			$("#photo2").val(file2);
+		}
+	})
+	var dragImgUpload = new DragImgUpload("#photo3", {
+		callback : function(files) {
+			//回调函数，可以传递给后台等等
+		 file3 = files[0];
+			console.log(file3);
+			$("#photo3").val(file3);
+		}
+	}) */
+	
+</script>
+
+<script>
+	var content = document.getElementById("content");
+	var nowlength = document.getElementById("now-length");
+	var sub = document.getElementById("sub");
+	var titlenote = document.getElementById("title-note");
+	var maxlength = 200;
+	function checkTextLength() {
+		var nowlen = maxlength - content.value.length;
+		if (nowlen < 0) {
+			nowlength.style.color = "red";
+			sub.disabled = true;
+		} else {
+			if (nowlen <= 190) {
+				sub.disabled = false;
+			} else {
+				sub.disabled = true;
+			}
+			nowlength.style.color = "#aaa";
+		}
+		nowlength.innerHTML = nowlen;
+	}
+
+	function checkTitle() {
+		var nowlen = maxlength - content.value.length;
+
+		if (nowlen <= 190) {
+			sub.disabled = false;
+		}
+		titlenote.innerHTML = "";
+	}
+
+	content.onkeyup = checkTextLength;
+</script>
+<script type="text/javascript">
+
+</script>
+
+</html>

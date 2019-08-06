@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style_pool.css"/>
+		<link rel="stylesheet" type="text/css" href="css/font.css"/>
+		<script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/public.js" type="text/javascript" charset="utf-8"></script>
+		<script src="layer/layer.js" type="text/javascript" charset="utf-8"></script>
+		<style>
+		.bottom_nav dl dd:nth-child(2) a .dier {display: block !important;}
+		.bottom_nav dl dd:nth-child(2) a .diyi {display: none !important;}
+		.bottom_nav dl dd:nth-child(2) a span {color: #8942E3;}
+		</style>
+	</head>
+	<body>
+		<h1 class="h1"><button class="iconfont icon-xiangzuo1" onclick="javascript:window.history.back(-1);"></button><span data-lang="Rental_equipment">租设备</span></h1>
+		<div class="device">
+			<form action="" method="post">
+				<div class="group">
+					<label data-lang="Wallet_balance">钱包余额</label>
+					<span class="yu">
+						2345435<i>AISC</i>
+					</span>
+				</div>
+				<div class="group">
+					<label data-lang="Number_shares">租用份数</label>
+					<input type="number" id="" value="" placeholder="请输入租用的份数"  data-lang="Please_enter_rent"/>
+				</div>
+				<div class="group">
+					<label data-lang="Number_months_rented">租用月数</label>
+					<input type="number" id="" value="" placeholder="请输入租用的月数"  data-lang="Pleas_rent"/>
+				</div>
+				<div class="group">
+					<label data-lang="Selection_Specification">选择规格</label>
+					<!--<input type="text" id="" value="" placeholder="请选择您租用设备的规格" />-->
+					<select name="">
+						<option value="">请选择您租用设备的规格</option>
+						<option value="">5</option>
+						<option value="">50000</option>
+					</select>
+					<span class="fu"> > </sapn>
+				</div>
+				<div class="group gekai">
+					<label data-lang="Selective_calculation_rate">选择算率</label>
+					<!--<input type="text" id="phone" value="" placeholder="请选择您租用设备的算率" />-->
+					<select name="">
+						<option value="">请选择您租用设备的算率</option>
+						<option value="">100</option>
+						<option value="">10000</option>
+					</select>
+					<span class="fu"> > </sapn>
+				</div>
+				<div class="group">
+					<label data-lang="Payment_amount">付款金额</label>
+					<span class="buy_yu">
+						1546<i>AISC</i>
+					</span>
+				</div>
+				<div class="group">
+					<label data-lang="Transaction_password">交易密码</label>
+					<input type="password" id="" value="" placeholder="请输入交易密码" data-lang="Please_enter_transaction_password" />
+				</div>
+				
+				<div class="ti_tiao">
+					<input type="submit" name="" class="tobuy tiijiao" value="确定" data-lang="Determine" />
+				</div>
+			</form>
+		</div>
+	</body>
+</html>

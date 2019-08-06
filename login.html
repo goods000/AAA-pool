@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title></title>
+    <link rel="stylesheet" href="css/css_pool.css" />
+    <link rel="stylesheet" href="css/font.css" />
+    <script src="js/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<style>
+	.locgin_i i{position: absolute;top: 5px;margin-bottom: 0px;}
+	.login h2 a:nth-child(1){font-size:20px;font-weight:600;color: #333;border-bottom: 2px solid #677ee8;}
+	.locgin_i i{color: #fff;    position: absolute;left: 5px;}
+	.logo img{padding-top:25%;}
+</style>
+<body style="width: 100vw;height:100vh;background: url(img/login_bg.png) no-repeat;background-size:100% 100%;padding:0px;background-attachment:fixed;">
+	<img src="img/logo_top.png" class="logo_top"/>
+	<div class="logo">
+		<img src="img/logo.png"/>
+		<p data-lang="Mine_pool">A I S C 矿 池</p>
+	</div>
+	<div class="login login_1">
+		<!--<h2><a href="login.html">登录</a><a href="rst.html">注册</a></h2>-->
+		<form>			
+			<div class="locgin_i">
+				<input type="text" id="phone" placeholder="请输入AISC矿池账号" data-lang="AISC_Mine_Account"/>
+			</div>
+			<div class="locgin_i">
+				<input type="password" placeholder="请输入AISC矿池登录密码" data-lang="enter_AISC_Logon_Password"/>
+			</div>
+			<!--<a style="padding-top:10px;display: block;" href="password.html">忘记密码?</a>-->
+			<input type="button" class="tijiao" value="登录" data-lang="sell_sale"/>
+		</form>
+		
+		<a href="register.html" >
+			<p class="go_btn"data-lang="New_account_create">新账号前往创建</p>
+		</a>
+	</div>
+	
+	<!--邀请弹框-->
+		<div class="motai" id="mo">
+			<div class="i_box">
+				<img src="img/kuang_title.png" class="kuang_title"/>
+				<div class="kuang_login">
+					<div class="kuang_i">
+						<img src="img/kuang_code.png"/>
+						<input type="text" placeholder="请输入您的账号" data-lang="enter_your_account_number"/>
+					</div>
+				</div>
+				<p class="i_btn" id="que" data-lang="confirm">确认</p>
+			</div>
+		</div>
+</body>
+<script type="text/javascript">
+//	$(".tijiao").click(function(){
+//		$("#mo").css("display","block");
+//	})
+//	$("#que").click(function(){
+//		$("#mo").css("display","none");
+//	})
+</script>
+</html>
